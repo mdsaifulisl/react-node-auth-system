@@ -1,16 +1,35 @@
-# React + Vite
+# React + Node.js Authentication System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full authentication system with email OTP verification, secure login, and password reset functionality.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User Registration with Email OTP Verification
+- Password saved only after OTP verification
+- Secure Login using Email & Password
+- Forgot Password flow with OTP verification
+- Password hashing using bcrypt
+- Email sending using Nodemailer
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Frontend: React, Bootstrap
+- Backend: Node.js, Express
+- Database: MySQL
+- Security: bcrypt
+- Email Service: Nodemailer
 
-## Expanding the ESLint configuration
+## Database Schema
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```sql
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(150),
+  password VARCHAR(255),
+  otp VARCHAR(6),
+  otp_expires_at DATETIME,
+  is_verified TINYINT(1),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
