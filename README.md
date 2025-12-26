@@ -19,21 +19,6 @@ A full authentication system with email OTP verification, secure login, and pass
 - Security: bcrypt
 - Email Service: Nodemailer
 
-## Database Schema
-
-```sql
-CREATE TABLE users (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(100),
-  email VARCHAR(150),
-  password VARCHAR(255),
-  otp VARCHAR(6),
-  otp_expires_at DATETIME,
-  is_verified TINYINT(1),
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-
 
 # Authentication System | React + Node.js
 
@@ -103,3 +88,20 @@ CREATE TABLE users (
   is_verified TINYINT(1),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+## Database Schema
+
+```sql
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(150),
+  password VARCHAR(255),
+  otp VARCHAR(6),
+  otp_expires_at DATETIME,
+  is_verified TINYINT(1),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
