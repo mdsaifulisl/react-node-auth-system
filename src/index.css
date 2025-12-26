@@ -1,0 +1,52 @@
+
+
+body{
+  background-color: #212529 !important;
+}
+.otp-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ 
+}
+.otp-section.active {
+  display: flex;
+}
+.otp-section.close {
+  display: none;
+}
+
+.close-btns{
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+}
+.home form{
+  width: 100%;
+}
+.otp-section form {
+  width: 100%;
+  max-width: 400px; /* adjust as needed */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.forgot-pass-email{
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/* forgot password email */
+
+
